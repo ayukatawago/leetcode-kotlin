@@ -1,6 +1,6 @@
-package `0004-median-of-two-sorted-arrays`
+package leetcode.problem0004
 
-class Solution0004 {
+class MedianOfTwoSortedArrays {
     fun findMedianSortedArrays(nums1: IntArray, nums2: IntArray): Double {
         val length = nums1.size + nums2.size
         val shouldHandleEvenArray = length % 2 == 0

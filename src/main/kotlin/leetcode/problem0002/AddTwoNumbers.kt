@@ -1,6 +1,6 @@
-package `0002-add-two-numbers`
+package leetcode.problem0002
 
-class Solution0002 {
+class AddTwoNumbers {
     fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
         requireNotNull(l1)
         requireNotNull(l2)

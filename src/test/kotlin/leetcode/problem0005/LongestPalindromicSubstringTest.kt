@@ -1,10 +1,10 @@
-package `0005-longest-palindromic-substring`
+package leetcode.problem0005
 
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class Solution0005Test {
-    private val target = Solution0005()
+class LongestPalindromicSubstringTest {
+    private val target = LongestPalindromicSubstring()
 
     @Test
     fun test1() {

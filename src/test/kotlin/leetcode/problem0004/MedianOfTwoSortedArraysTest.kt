@@ -1,10 +1,10 @@
-package `0004-median-of-two-sorted-arrays`
+package leetcode.problem0004
 
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class Solution0004Test {
-    private val target = Solution0004()
+class MedianOfTwoSortedArraysTest {
+    private val target = MedianOfTwoSortedArrays()
 
     @Test
     fun test1() {

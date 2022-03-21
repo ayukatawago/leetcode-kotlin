@@ -1,8 +1,8 @@
-package `0005-longest-palindromic-substring`
+package leetcode.problem0005
 
 import kotlin.math.max
 
-class Solution0005 {
+class LongestPalindromicSubstring {
     fun longestPalindrome(s: String): String {
         if (s.isEmpty()) {
             return ""

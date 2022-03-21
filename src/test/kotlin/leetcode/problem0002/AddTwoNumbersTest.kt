@@ -1,10 +1,10 @@
-import `0002-add-two-numbers`.ListNode
-import `0002-add-two-numbers`.Solution0002
+import leetcode.problem0002.ListNode
+import leetcode.problem0002.AddTwoNumbers
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class Solution0002Test {
-    private val target = Solution0002()
+class AddTwoNumbersTest {
+    private val target = AddTwoNumbers()
 
     @Test
     fun test1() {

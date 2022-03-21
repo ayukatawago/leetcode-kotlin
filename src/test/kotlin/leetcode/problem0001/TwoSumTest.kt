@@ -1,12 +1,11 @@
-package `0001-two-sum`
+package leetcode.problem0001
 
-import Solution0001
+import TwoSum
 import org.junit.Test
 import kotlin.test.assertEquals
 
-
-class Solution0001Test {
-    private val solution = Solution0001()
+class TwoSumTest {
+    private val solution = TwoSum()
 
     @Test
     fun test1() {
