@@ -1,42 +1,35 @@
 package `0005-longest-palindromic-substring`
 
+import kotlin.math.max
+
 class Solution0005 {
     fun longestPalindrome(s: String): String {
         if (s.isEmpty()) {
             return ""
         }
-        var temp = s[0].toString()
+        var startIndex = 0
+        var endIndex = 0
 
         for (index in 0..s.length) {
-            temp = findLongerPalindrome(s.substring(index), temp)
+            val temp1 = findPalindrome(s, index, index)
+            val temp2 = findPalindrome(s, index, index + 1)
+            val maxPalindromeLength = max(temp1, temp2)
+            if (maxPalindromeLength > endIndex - startIndex) {
+                startIndex = index - (maxPalindromeLength - 1) / 2
+                endIndex = index + maxPalindromeLength / 2 + 1
+            }
         }
-        return temp
+        return s.substring(startIndex, endIndex)
     }
 
-    private fun findLongerPalindrome(s: String, currentPalindrome: String): String {
-        if (s.length < currentPalindrome.length) {
-            return currentPalindrome
-        }
-        var temp = currentPalindrome
-        for (subLength in 0..s.length) {
-            val substring = s.substring(0, s.length - subLength)
-            if (temp.length >= substring.length) {
+    private fun findPalindrome(s: String, start: Int, end: Int): Int {
+        var length = end - start
+        for (index in 0..s.length) {
+            if (start - index < 0 || end + index >= s.length || s[start - index] != s[end + index]) {
                 break
             }
-            if (isPalindromic(substring)) {
-                temp = substring
-            }
+            length += 2
         }
-        return temp
-    }
-
-    private fun isPalindromic(s: String): Boolean {
-        val palindromicSize = s.length / 2
-        for (i in 0..palindromicSize) {
-            if (s[i] != s[s.length - 1 - i]) {
-                return false
-            }
-        }
-        return true
+        return length - 1
     }
 }
