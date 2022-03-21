@@ -1,8 +1,8 @@
-package `0003-longest-substring-without-repeating-characters`
+package leetcode.problem0003
 
 import java.lang.Integer.min
 
-class Solution0003 {
+class LongestSubstringWithoutRepeatingCharacters {
     fun lengthOfLongestSubstring(s: String): Int {
         var maxSubstring = ""
         val maxSize = s.toSet().size

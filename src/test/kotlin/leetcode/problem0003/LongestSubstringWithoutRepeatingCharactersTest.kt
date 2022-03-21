@@ -1,10 +1,10 @@
-package `0003-longest-substring-without-repeating-characters`
+package leetcode.problem0003
 
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class Solution0003Test {
-    private val target = Solution0003()
+class LongestSubstringWithoutRepeatingCharactersTest {
+    private val target = LongestSubstringWithoutRepeatingCharacters()
 
     @Test
     fun test1() {
