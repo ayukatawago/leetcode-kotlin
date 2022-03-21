@@ -1,5 +1,5 @@
-import leetcode.problem0002.ListNode
 import leetcode.problem0002.AddTwoNumbers
+import leetcode.problem0002.ListNode
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

@@ -10,7 +10,7 @@ class AddTwoNumbers {
         var inputPointer2 = l2
         var shouldAddNext = false
         while (inputPointer1 != null || inputPointer2 != null || shouldAddNext) {
-            val sum = (inputPointer1?.`val` ?: 0) + (inputPointer2?.`val` ?: 0) + if(shouldAddNext) 1 else 0
+            val sum = (inputPointer1?.`val` ?: 0) + (inputPointer2?.`val` ?: 0) + if (shouldAddNext) 1 else 0
             shouldAddNext = sum / 10 > 0
             if (head == null) {
                 head = ListNode(sum.rem(10))

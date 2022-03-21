@@ -9,9 +9,9 @@ class ZigzagConversion {
         val zigzagSize = numRows * 2 - 2
         val zigzagStringArray: Array<MutableList<Char>> = Array(numRows) { mutableListOf() }
         val zigzagIndexArray = Array(zigzagSize) { 0 }
-        for(row in 0 until numRows) {
+        for (row in 0 until numRows) {
             zigzagIndexArray[row] = row
-            if (row != 0 && row != numRows -1) {
+            if (row != 0 && row != numRows - 1) {
                 zigzagIndexArray[zigzagSize - row] = row
             }
         }
