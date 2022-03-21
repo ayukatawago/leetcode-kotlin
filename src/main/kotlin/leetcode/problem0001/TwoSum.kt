@@ -9,7 +9,7 @@ class TwoSum {
                     return intArrayOf(it, index)
                 }
             }
-            hashmap[value]= index
+            hashmap[value] = index
         }
         return null
     }

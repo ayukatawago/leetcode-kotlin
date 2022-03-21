@@ -18,7 +18,7 @@ class MedianOfTwoSortedArrays {
                 else -> nums2[pointer2++]
             }
         }
-        return if(shouldHandleEvenArray) {
+        return if (shouldHandleEvenArray) {
             (mergedIntArray[median - 1].toDouble() + mergedIntArray[median].toDouble()) / 2
         } else {
             mergedIntArray[median].toDouble()
