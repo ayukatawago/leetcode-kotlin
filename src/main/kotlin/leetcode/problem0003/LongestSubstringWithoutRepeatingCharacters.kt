@@ -10,10 +10,10 @@ class LongestSubstringWithoutRepeatingCharacters {
             return 1
         }
 
-        s.forEachIndexed { index, char ->
+        s.indices.forEach { index ->
             val sub = s.substring(index, min(index + maxSize, s.lastIndex + 1))
             if (sub.length < maxSubstring.length) {
-                return@forEachIndexed
+                return@forEach
             }
             sub.dropLastWhileDuplicate().let {
                 if (it.length > maxSubstring.length) {
