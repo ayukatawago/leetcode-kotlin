@@ -4,7 +4,7 @@ class FourSum {
     fun fourSum(nums: IntArray, target: Int): List<List<Int>> {
         val sortedNums = nums.sorted()
 
-        return kSum(sortedNums, target, 4).toSet().toList()
+        return kSum(sortedNums, target, 4)
     }
 
     private fun kSum(sortedNums: List<Int>, target: Int, k: Int): List<List<Int>> {
@@ -24,7 +24,7 @@ class FourSum {
             }
             answerMap[num] = answerList.map { getAnswer(num, it) }
         }
-        return answerMap.flatMap { it.value }
+        return answerMap.flatMap { it.value }.distinct()
     }
 
     private fun getAnswer(num: Int, numList: List<Int>): List<Int> =
