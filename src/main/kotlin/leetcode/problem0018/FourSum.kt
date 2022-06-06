@@ -18,22 +18,19 @@ class FourSum {
             }
             val remainingNums = sortedNums.drop(index + 1)
             val answerList = if (k == 3) {
-                twoSum(remainingNums, target - num).map { it.toAnswer(num) }
+                twoSum(remainingNums, target - num)
             } else {
-                kSum(remainingNums, target - num, k - 1).map { it.toAnswer(num) }
+                kSum(remainingNums, target - num, k - 1)
             }
-            answerMap[num] = answerList
+            answerMap[num] = answerList.map { getAnswer(num, it) }
         }
         return answerMap.flatMap { it.value }
     }
 
-    private fun List<Int>.toAnswer(num: Int): List<Int> {
-        val answerList = mutableListOf(num)
-        forEach {
-            answerList.add(it)
+    private fun getAnswer(num: Int, numList: List<Int>): List<Int> =
+        mutableListOf(num).also {
+            it.addAll(numList)
         }
-        return answerList
-    }
 
     private fun twoSum(sortedNums: List<Int>, target: Int): List<List<Int>> {
         if (sortedNums.size < 2) {
