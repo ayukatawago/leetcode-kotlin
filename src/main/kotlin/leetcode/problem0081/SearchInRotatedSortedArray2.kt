@@ -15,7 +15,7 @@ class SearchInRotatedSortedArray2 {
             when {
                 nums[center] == target -> return true
                 nums[left] == nums[center] -> left++
-                (nums[left] <= nums[center] && nums[left] > target) || (nums[left] > nums[center] && nums[left] <= target)-> {
+                (nums[left] <= nums[center]) xor (nums[left] <= target) -> {
                     if (nums[left] <= nums[center]) {
                         left = center + 1
                     } else {
