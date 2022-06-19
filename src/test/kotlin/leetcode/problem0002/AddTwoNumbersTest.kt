@@ -1,5 +1,5 @@
 import leetcode.problem0002.AddTwoNumbers
-import leetcode.problem0002.ListNode
+import leetcode.shared.ListNode
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -47,32 +47,12 @@ class AddTwoNumbersTest {
     }
 
     private fun exec(input1: List<Int>, input2: List<Int>, output: List<Int>) {
-        val listNode1 = input1.toListNode()
-        val listNode2 = input2.toListNode()
+        val listNode1 = ListNode.from(input1)
+        val listNode2 = ListNode.from(input2)
         var result = target.addTwoNumbers(listNode1, listNode2)
         output.forEach {
             assertEquals(it, result?.`val`)
             result = result?.next
-        }
-    }
-
-    private fun List<Int>.toListNode(): ListNode? {
-        if (size == 0) {
-            return null
-        }
-        val head = ListNode(get(0))
-        drop(1).forEach {
-            head.append(it)
-        }
-
-        return head
-    }
-
-    private fun ListNode.append(value: Int) {
-        if (next != null) {
-            next!!.append(value)
-        } else {
-            next = ListNode(value)
         }
     }
 }
