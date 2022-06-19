@@ -1,5 +1,7 @@
 package leetcode.problem0002
 
+import leetcode.shared.ListNode
+
 class AddTwoNumbers {
     fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
         requireNotNull(l1)
@@ -25,8 +27,4 @@ class AddTwoNumbers {
         }
         return head
     }
-}
-
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
 }

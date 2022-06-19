@@ -1,5 +1,6 @@
 package leetcode.problem0019
 
+import leetcode.shared.ListNode
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
@@ -24,7 +25,7 @@ internal class RemoveNthNodeTest {
     }
 
     private fun exec(input: List<Int>, n: Int, output: List<Int>) {
-        val listNode = input.toListNode()
+        val listNode = ListNode.from(input)
         val result = target.removeNthFromEnd(listNode, n)
         if (output.isEmpty()) {
             assertNull(result)
@@ -32,18 +33,5 @@ internal class RemoveNthNodeTest {
             assertNotNull(result)
             assertEquals(output, result.toList())
         }
-    }
-
-    private fun List<Int>.toListNode(): ListNode? {
-        if (isEmpty()) {
-            return null
-        }
-        val head = ListNode(get(0))
-        var pointer: ListNode = head
-        drop(1).forEach {
-            pointer.next = ListNode(it)
-            pointer = pointer.next!!
-        }
-        return head
     }
 }

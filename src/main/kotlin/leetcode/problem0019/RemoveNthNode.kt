@@ -1,5 +1,7 @@
 package leetcode.problem0019
 
+import leetcode.shared.ListNode
+
 class RemoveNthNode {
     fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
         requireNotNull(head)
@@ -32,19 +34,5 @@ class RemoveNthNode {
         }
 
         return listNode
-    }
-}
-
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
-
-    fun toList(): List<Int> {
-        val mutableList = mutableListOf<Int>()
-        var pointer: ListNode? = this
-        while (pointer != null) {
-            mutableList.add(pointer.`val`)
-            pointer = pointer.next
-        }
-        return mutableList
     }
 }
