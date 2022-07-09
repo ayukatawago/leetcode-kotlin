@@ -2,45 +2,23 @@ package leetcode.problem0073
 
 class SetMatrixZeroes {
     fun setZeroes(matrix: Array<IntArray>) {
-        var shouldClearFirstColumns = false
-        var shouldClearFirstRows = false
-
+        val rows = mutableSetOf<Int>()
+        val columns = mutableSetOf<Int>()
         matrix.forEachIndexed { row, it ->
-            it.forEachIndexed columnLoop@ { column, i ->
-                if (row == 0 && i == 0) {
-                    shouldClearFirstRows = true
-                }
-                if (column == 0 && i == 0) {
-                    shouldClearFirstColumns = true
-                }
-
-                if (row == 0 || column == 0) return@columnLoop
-
+            it.forEachIndexed { column, i ->
                 if (i == 0) {
-                    matrix[row][0] = 0
-                    matrix[0][column] = 0
+                    rows.add(row)
+                    columns.add(column)
                 }
             }
         }
 
         matrix.forEachIndexed { row, it ->
             it.forEachIndexed columnLoop@{ column, i ->
-                if (i == 0 || row == 0 || column == 0) return@columnLoop
-                if (matrix[row][0] == 0 || matrix[0][column] == 0) {
+                if (i == 0) return@columnLoop
+                if (rows.contains(row) || columns.contains(column)) {
                     matrix[row][column] = 0
                 }
-            }
-        }
-
-        if (shouldClearFirstRows) {
-            matrix[0].indices.forEach {
-                matrix[0][it] = 0
-            }
-        }
-
-        if (shouldClearFirstColumns) {
-            matrix.indices.forEach {
-                matrix[it][0] = 0
             }
         }
     }
