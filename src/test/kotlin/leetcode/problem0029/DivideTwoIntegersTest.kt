@@ -33,6 +33,7 @@ internal class DivideTwoIntegersTest {
     @Test
     fun test5() {
         assertEquals(2147483647, target.divide(-2147483648, -1))
+        assertEquals(-2147483648, target.divide(-2147483648, 1))
     }
 
     @Test
@@ -43,5 +44,6 @@ internal class DivideTwoIntegersTest {
     @Test
     fun test7() {
         assertEquals(715827882, target.divide(2147483647, 3))
+        assertEquals(1000000000, target.divide(1000000000, 1))
     }
 }

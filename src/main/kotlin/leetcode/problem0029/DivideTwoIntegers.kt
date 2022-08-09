@@ -15,13 +15,25 @@ class DivideTwoIntegers {
 
         val isNegative = (dividend > 0) xor (divisor > 0)
 
-        var count = 0
-        var remaining = abs(dividend)
+        val answer = bitDivide(abs(dividend.toLong()), abs(divisor.toLong()))
 
-        while (remaining - abs(divisor) >= 0) {
-            remaining -= abs(divisor)
-            count++
+        return if (isNegative) -answer else answer
+    }
+
+    private fun bitDivide(dividend: Long, divisor: Long): Int {
+        if (dividend < divisor) {
+            return 0
         }
-        return if (isNegative) -count else count
+        var bitCount = 0
+        while (dividend - divisor.shl(bitCount) >= 0 && bitCount < 31) {
+            bitCount++
+        }
+        val remaining = dividend - divisor.shl(bitCount - 1)
+
+        return if (remaining < divisor) {
+            1.shl(bitCount - 1)
+        } else {
+            1.shl(bitCount - 1) + bitDivide(remaining, divisor)
+        }
     }
 }
