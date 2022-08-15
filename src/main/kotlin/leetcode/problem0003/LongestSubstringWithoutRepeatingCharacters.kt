@@ -32,12 +32,9 @@ class LongestSubstringWithoutRepeatingCharacters {
             return this
         }
         var tmp = ""
-        for (index in lastIndex downTo 0) {
-            if (tmp.length > index) {
-                break
-            }
-            val sub = substring(0, index)
-
+        var sub = this
+        while (tmp.length < sub.length) {
+            sub = sub.dropLast(1)
             if (sub.toSet().size != sub.length)
                 continue
             tmp = sub
