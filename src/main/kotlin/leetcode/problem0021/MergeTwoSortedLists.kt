@@ -11,30 +11,37 @@ class MergeTwoSortedLists {
             return list1
         }
 
-        var pointer1 = list1
-        var pointer2 = list2
-        val answer = mutableListOf<Int>()
+        val dummyNode = ListNode(0)
+        var answerPointer: ListNode? = dummyNode
+        var pointer1: ListNode? = list1
+        var pointer2: ListNode? = list2
+
         while (pointer1 != null || pointer2 != null) {
-            when {
+            answerPointer?.next = when {
                 pointer1 == null -> {
                     requireNotNull(pointer2)
-                    answer.add(pointer2.`val`)
-                    pointer2 = pointer2.next
+                    pointer2.also {
+                        pointer2 = pointer2?.next
+                    }
                 }
                 pointer2 == null -> {
-                    answer.add(pointer1.`val`)
-                    pointer1 = pointer1.next
+                    pointer1.also {
+                        pointer1 = pointer1?.next
+                    }
                 }
-                pointer1.`val` <= pointer2.`val` -> {
-                    answer.add(pointer1.`val`)
-                    pointer1 = pointer1.next
+                requireNotNull(pointer1).`val` <= requireNotNull(pointer2).`val` -> {
+                    pointer1.also {
+                        pointer1 = pointer1?.next
+                    }
                 }
                 else -> {
-                    answer.add(pointer2.`val`)
-                    pointer2 = pointer2.next
+                    pointer2.also {
+                        pointer2 = pointer2?.next
+                    }
                 }
             }
+            answerPointer = answerPointer?.next
         }
-        return ListNode.from(answer)
+        return dummyNode.next
     }
 }
