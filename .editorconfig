@@ -10,3 +10,8 @@ trim_trailing_whitespace = true
 
 [*.yml]
 indent_size = 2
+
+[{*.kt,*.kts}]
+# Wildcard imports (of any type) are not allowed.
+ij_kotlin_name_count_to_use_star_import = 2147483647
+ij_kotlin_name_count_to_use_star_import_for_members = 2147483647
