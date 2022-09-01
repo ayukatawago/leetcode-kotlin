@@ -2,17 +2,21 @@ package leetcode.problem0010
 
 class RegularExpressionMatching {
     fun isMatch(s: String, p: String): Boolean {
-        if (p.isEmpty()) {
-            return s.isEmpty()
+        val result = Array(s.length + 1) { BooleanArray(p.length + 1) }
+
+        result[s.length][p.length] = true
+
+        (s.length downTo 0).forEach { sIndex ->
+            (p.lastIndex downTo 0).forEach { pIndex ->
+                val firstMatch = sIndex < s.length && (p[pIndex] == '.' || p[pIndex] == s[sIndex])
+                result[sIndex][pIndex] = if (pIndex + 1 < p.length && p[pIndex + 1] == '*') {
+                    result[sIndex][pIndex + 2] || (firstMatch && result[sIndex + 1][pIndex])
+                } else {
+                    firstMatch && result[sIndex + 1][pIndex + 1]
+                }
+            }
         }
 
-        val isFirstCharMatch =
-            s.isNotEmpty() && s[0] == p[0] || p[0] == '.'
-
-        return if (p.length >= 2 && p[1] == '*') {
-            isMatch(s, p.substring(2)) || (isFirstCharMatch && s.isNotEmpty() && isMatch(s.substring(1), p))
-        } else {
-            s.isNotEmpty() && isFirstCharMatch && isMatch(s.substring(1), p.substring(1))
-        }
+        return result[0][0]
     }
 }
