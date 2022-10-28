@@ -2,11 +2,10 @@ package leetcode.problem0089
 
 class GrayCode {
     fun grayCode(n: Int): List<Int> {
-        if (n == 1) {
-            return listOf(0, 1)
+        val arrayList = arrayListOf<Int>()
+        (0 until (1.shl(n))).forEach { index ->
+            arrayList.add(index xor index.shr(1))
         }
-        val tmp = grayCode(n - 1)
-
-        return tmp + tmp.reversed().map { it + 1.shl(n - 1) }
+        return arrayList
     }
 }
