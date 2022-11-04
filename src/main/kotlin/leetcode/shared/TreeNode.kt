@@ -22,8 +22,9 @@ class TreeNode(var `val`: Int) {
     }
 
     companion object {
-        fun from(input: Array<Int?>): TreeNode {
-            val first = input[0] ?: error("invalid input")
+        fun from(input: Array<Int?>): TreeNode? {
+            if (input.isEmpty()) return null
+            val first = input[0] ?: return null
             val rootNode = TreeNode(first)
             rootNode.insert(0, input)
             return rootNode
