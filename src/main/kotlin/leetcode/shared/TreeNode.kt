@@ -21,6 +21,26 @@ class TreeNode(var `val`: Int) {
         }
     }
 
+    fun toList(): List<Int?> {
+        val array = arrayListOf<Int?>()
+
+        retrieve(array, this, 0)
+
+        return array.dropLastWhile { it == null }
+    }
+
+    private fun retrieve(array: ArrayList<Int?>, node: TreeNode?, index: Int) {
+        while (index >= array.size) {
+            array.add(null)
+        }
+        array[index] = node?.`val`
+
+        if (node == null) return
+
+        retrieve(array, node.left, 2 * index + 1)
+        retrieve(array, node.right, 2 * index + 2)
+    }
+
     companion object {
         fun from(input: Array<Int?>): TreeNode? {
             if (input.isEmpty()) return null
