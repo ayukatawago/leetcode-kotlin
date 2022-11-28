@@ -1,6 +1,6 @@
 package leetcode.problem0005
 
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class LongestPalindromicSubstringTest {

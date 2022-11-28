@@ -1,6 +1,6 @@
 package leetcode.problem0004
 
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class MedianOfTwoSortedArraysTest {

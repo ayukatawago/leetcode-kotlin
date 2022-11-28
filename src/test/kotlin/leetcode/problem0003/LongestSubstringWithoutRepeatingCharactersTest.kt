@@ -1,6 +1,6 @@
 package leetcode.problem0003
 
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class LongestSubstringWithoutRepeatingCharactersTest {

@@ -26,7 +26,7 @@ class ThreeSumTest {
         assertEquals(0, output.size)
     }
 
-    @org.junit.Test
+    @Test
     fun test4() {
         val output = target.threeSum(intArrayOf(-1, 0, 1, 2, -1, -4, -2, -3, 3, 0, 4))
         assertEquals(9, output.size)
