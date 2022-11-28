@@ -1,7 +1,6 @@
 package leetcode.problem0001
 
-import TwoSum
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class TwoSumTest {

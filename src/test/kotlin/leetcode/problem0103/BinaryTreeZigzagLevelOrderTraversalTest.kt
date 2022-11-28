@@ -1,7 +1,7 @@
 package leetcode.problem0103
 
 import leetcode.shared.TreeNode
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertEquals
 
 internal class BinaryTreeZigzagLevelOrderTraversalTest {
