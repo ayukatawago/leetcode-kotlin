@@ -38,4 +38,15 @@ class ConstructBinaryTreeFromPreorderAndInorderTraversalTest {
             target.buildTree(preorder, inorder)?.toList()
         )
     }
+
+    @Test
+    fun test4() {
+        val preorder = intArrayOf(1, 2)
+        val inorder = intArrayOf(2, 1)
+
+        assertEquals(
+            listOf(1, 2),
+            target.buildTree(preorder, inorder)?.toList()
+        )
+    }
 }
