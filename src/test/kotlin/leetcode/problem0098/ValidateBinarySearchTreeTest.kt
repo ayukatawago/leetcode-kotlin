@@ -11,7 +11,7 @@ internal class ValidateBinarySearchTreeTest {
     @Test
     fun test1() {
         val input: Array<Int?> = arrayOf(2, 1, 3)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
 
         assertTrue(target.isValidBST(treeNode))
     }
@@ -19,7 +19,7 @@ internal class ValidateBinarySearchTreeTest {
     @Test
     fun test2() {
         val input: Array<Int?> = arrayOf(5, 1, 4, null, null, 3, 6)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
 
         assertFalse(target.isValidBST(treeNode))
     }
@@ -27,7 +27,7 @@ internal class ValidateBinarySearchTreeTest {
     @Test
     fun test3() {
         val input: Array<Int?> = arrayOf(2, 2, 2)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
 
         assertFalse(target.isValidBST(treeNode))
     }
@@ -35,7 +35,7 @@ internal class ValidateBinarySearchTreeTest {
     @Test
     fun test4() {
         val input: Array<Int?> = arrayOf(5, 4, 6, null, null, 3, 7)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
 
         assertFalse(target.isValidBST(treeNode))
     }
@@ -43,7 +43,7 @@ internal class ValidateBinarySearchTreeTest {
     @Test
     fun test5() {
         val input: Array<Int?> = arrayOf(3, 1, 5, 0, 2, 4, 6)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
 
         assertTrue(target.isValidBST(treeNode))
     }
@@ -51,7 +51,7 @@ internal class ValidateBinarySearchTreeTest {
     @Test
     fun test6() {
         val input: Array<Int?> = arrayOf(3, 1, 5, 0, 2, 4, 6, null, null, null, 3)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
 
         assertFalse(target.isValidBST(treeNode))
     }
@@ -59,7 +59,7 @@ internal class ValidateBinarySearchTreeTest {
     @Test
     fun test7() {
         val input: Array<Int?> = arrayOf(2147483647)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
 
         assertTrue(target.isValidBST(treeNode))
     }

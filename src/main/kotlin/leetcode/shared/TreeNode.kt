@@ -4,23 +4,6 @@ class TreeNode(var `val`: Int) {
     var left: TreeNode? = null
     var right: TreeNode? = null
 
-    fun insert(index: Int, input: Array<Int?>) {
-        if (2 * index + 1 < input.size) {
-            input[2 * index + 1]?.let {
-                left = TreeNode(it).also { node ->
-                    node.insert(2 * index + 1, input)
-                }
-            }
-        }
-        if (2 * index + 2 < input.size) {
-            input[2 * index + 2]?.let {
-                right = TreeNode(it).also { node ->
-                    node.insert(2 * index + 2, input)
-                }
-            }
-        }
-    }
-
     fun toList(): List<Int?> {
         val array = arrayListOf<Int?>()
 
@@ -42,11 +25,32 @@ class TreeNode(var `val`: Int) {
     }
 
     companion object {
-        fun from(input: Array<Int?>): TreeNode? {
+        fun of(input: Array<Int?>): TreeNode? {
             if (input.isEmpty()) return null
-            val first = input[0] ?: return null
-            val rootNode = TreeNode(first)
-            rootNode.insert(0, input)
+            val firstValue = input[0] ?: return null
+            val rootNode = TreeNode(firstValue)
+
+            val queue = ArrayDeque<TreeNode>()
+            queue.add(rootNode)
+            var index = 1
+            while (index < input.size) {
+                val parent = queue.removeFirst()
+                val leftValue = input[index++]
+                if (leftValue != null) {
+                    val leftNode = TreeNode(leftValue)
+                    parent.left = leftNode
+                    queue.add(leftNode)
+                }
+                if (index < input.size) {
+                    val rightValue = input[index++]
+                    if (rightValue != null) {
+                        val rightNode = TreeNode(rightValue)
+                        parent.right = rightNode
+                        queue.add(rightNode)
+                    }
+                }
+            }
+
             return rootNode
         }
     }

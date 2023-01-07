@@ -9,13 +9,13 @@ internal class MaximumDepthOfBinaryTreeTest {
 
     @Test
     fun test1() {
-        val root = TreeNode.from(arrayOf(3, 9, 20, null, null, 15, 7))
+        val root = TreeNode.of(arrayOf(3, 9, 20, null, null, 15, 7))
         assertEquals(3, target.maxDepth(root))
     }
 
     @Test
     fun test2() {
-        val root = TreeNode.from(arrayOf(1, null, 2))
+        val root = TreeNode.of(arrayOf(1, null, 2))
         assertEquals(2, target.maxDepth(root))
     }
 }
