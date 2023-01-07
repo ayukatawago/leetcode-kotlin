@@ -9,47 +9,13 @@ class MinimumDepthOfBinaryTreeTest {
 
     @Test
     fun test1() {
-        val root = TreeNode.from(arrayOf(3, 9, 20, null, null, 15, 7))
+        val root = TreeNode.of(arrayOf(3, 9, 20, null, null, 15, 7))
         assertEquals(2, target.minDepth(root))
     }
 
     @Test
     fun test2() {
-        val root = TreeNode.from(
-            arrayOf(
-                2,
-                null,
-                3,
-                null,
-                null,
-                null,
-                4,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                5,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                6
-            )
-        )
+        val root = TreeNode.of(arrayOf(2, null, 3, null, 4, null, 5, null, 6))
         assertEquals(5, target.minDepth(root))
     }
 }

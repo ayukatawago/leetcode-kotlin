@@ -10,25 +10,25 @@ class BalancedBinaryTreeTest {
 
     @Test
     fun test1() {
-        val root = TreeNode.from(arrayOf(3, 9, 20, null, null, 15, 7))
+        val root = TreeNode.of(arrayOf(3, 9, 20, null, null, 15, 7))
         assertTrue(target.isBalanced(root))
     }
 
     @Test
     fun test2() {
-        val root = TreeNode.from(arrayOf(1, 2, 2, 3, 3, null, null, 4, 4))
+        val root = TreeNode.of(arrayOf(1, 2, 2, 3, 3, null, null, 4, 4))
         assertFalse(target.isBalanced(root))
     }
 
     @Test
     fun test3() {
-        val root = TreeNode.from(emptyArray())
+        val root = TreeNode.of(emptyArray())
         assertTrue(target.isBalanced(root))
     }
 
     @Test
     fun test4() {
-        val root = TreeNode.from(arrayOf(1, 2, 2, 3, null, null, 3, 4, null, null, 4))
+        val root = TreeNode.of(arrayOf(1, 2, 2, 3, null, null, 3, 4, null, null, 4))
         assertFalse(target.isBalanced(root))
     }
 }

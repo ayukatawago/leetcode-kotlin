@@ -10,7 +10,7 @@ internal class RecoverBinarySearchTreeTest {
     @Test
     fun test1() {
         val input: Array<Int?> = arrayOf(1, 3, null, null, 2)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
         target.recoverTree(treeNode)
 
         assertEquals(
@@ -22,7 +22,7 @@ internal class RecoverBinarySearchTreeTest {
     @Test
     fun test2() {
         val input: Array<Int?> = arrayOf(3, 1, 4, null, null, 2)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
         target.recoverTree(treeNode)
 
         assertEquals(
@@ -34,7 +34,7 @@ internal class RecoverBinarySearchTreeTest {
     @Test
     fun test3() {
         val input: Array<Int?> = arrayOf(1, 2)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
         target.recoverTree(treeNode)
 
         assertEquals(
@@ -46,7 +46,7 @@ internal class RecoverBinarySearchTreeTest {
     @Test
     fun test4() {
         val input: Array<Int?> = arrayOf(10, 8, 40, 4, 60, 9, 80)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
         target.recoverTree(treeNode)
 
         assertEquals(

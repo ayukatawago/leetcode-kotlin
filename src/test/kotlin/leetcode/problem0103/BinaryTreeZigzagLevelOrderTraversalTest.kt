@@ -9,7 +9,7 @@ internal class BinaryTreeZigzagLevelOrderTraversalTest {
 
     @Test
     fun test1() {
-        val root = TreeNode.from(arrayOf(3, 9, 20, null, null, 15, 7))
+        val root = TreeNode.of(arrayOf(3, 9, 20, null, null, 15, 7))
         assertEquals(
             listOf(listOf(3), listOf(20, 9), listOf(15, 7)),
             target.zigzagLevelOrder(root)
@@ -18,7 +18,7 @@ internal class BinaryTreeZigzagLevelOrderTraversalTest {
 
     @Test
     fun test2() {
-        val root = TreeNode.from(arrayOf(1))
+        val root = TreeNode.of(arrayOf(1))
         assertEquals(
             listOf(listOf(1)),
             target.zigzagLevelOrder(root)
@@ -27,7 +27,7 @@ internal class BinaryTreeZigzagLevelOrderTraversalTest {
 
     @Test
     fun test3() {
-        val root = TreeNode.from(arrayOf())
+        val root = TreeNode.of(arrayOf())
         assertEquals(
             listOf(),
             target.zigzagLevelOrder(root)
@@ -36,7 +36,7 @@ internal class BinaryTreeZigzagLevelOrderTraversalTest {
 
     @Test
     fun test4() {
-        val root = TreeNode.from(arrayOf(1, 2, 3, 4, 5))
+        val root = TreeNode.of(arrayOf(1, 2, 3, 4, 5))
         assertEquals(
             listOf(listOf(1), listOf(3, 2), listOf(4, 5)),
             target.zigzagLevelOrder(root)
@@ -45,7 +45,7 @@ internal class BinaryTreeZigzagLevelOrderTraversalTest {
 
     @Test
     fun test5() {
-        val root = TreeNode.from(arrayOf(1, 2, 3, 4, null, null, 5))
+        val root = TreeNode.of(arrayOf(1, 2, 3, 4, null, null, 5))
         assertEquals(
             listOf(listOf(1), listOf(3, 2), listOf(4, 5)),
             target.zigzagLevelOrder(root)

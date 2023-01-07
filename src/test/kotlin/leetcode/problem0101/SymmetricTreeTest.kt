@@ -11,7 +11,7 @@ internal class SymmetricTreeTest {
     @Test
     fun test1() {
         val input: Array<Int?> = arrayOf(1, 2, 2, 3, 4, 4, 3)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
 
         assertTrue(target.isSymmetric(treeNode))
     }
@@ -19,7 +19,7 @@ internal class SymmetricTreeTest {
     @Test
     fun test2() {
         val input: Array<Int?> = arrayOf(1, 2, 2, null, 3, null, 3)
-        val treeNode = TreeNode.from(input)
+        val treeNode = TreeNode.of(input)
 
         assertFalse(target.isSymmetric(treeNode))
     }

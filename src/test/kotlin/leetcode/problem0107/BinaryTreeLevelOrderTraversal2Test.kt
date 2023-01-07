@@ -9,7 +9,7 @@ class BinaryTreeLevelOrderTraversal2Test {
 
     @Test
     fun test1() {
-        val root = TreeNode.from(arrayOf(3, 9, 20, null, null, 15, 7))
+        val root = TreeNode.of(arrayOf(3, 9, 20, null, null, 15, 7))
         assertEquals(
             listOf(listOf(15, 7), listOf(9, 20), listOf(3)),
             target.levelOrderBottom(root)
@@ -18,7 +18,7 @@ class BinaryTreeLevelOrderTraversal2Test {
 
     @Test
     fun test2() {
-        val root = TreeNode.from(arrayOf(1))
+        val root = TreeNode.of(arrayOf(1))
         assertEquals(
             listOf(listOf(1)),
             target.levelOrderBottom(root)
@@ -27,7 +27,7 @@ class BinaryTreeLevelOrderTraversal2Test {
 
     @Test
     fun test3() {
-        val root = TreeNode.from(arrayOf())
+        val root = TreeNode.of(arrayOf())
         assertEquals(
             listOf(),
             target.levelOrderBottom(root)
