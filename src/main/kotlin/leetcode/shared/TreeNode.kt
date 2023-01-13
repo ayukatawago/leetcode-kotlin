@@ -5,23 +5,23 @@ class TreeNode(var `val`: Int) {
     var right: TreeNode? = null
 
     fun toList(): List<Int?> {
-        val array = arrayListOf<Int?>()
-
-        retrieve(array, this, 0)
-
-        return array.dropLastWhile { it == null }
-    }
-
-    private fun retrieve(array: ArrayList<Int?>, node: TreeNode?, index: Int) {
-        while (index >= array.size) {
-            array.add(null)
+        val result = mutableListOf<Int?>()
+        val queue = ArrayDeque<TreeNode?>()
+        queue.add(left)
+        queue.add(right)
+        result.add(`val`)
+        while (queue.isNotEmpty()) {
+            val node = queue.removeFirst()
+            if (node == null) {
+                result.add(null)
+            } else {
+                result.add(node.`val`)
+                queue.add(node.left)
+                queue.add(node.right)
+            }
         }
-        array[index] = node?.`val`
 
-        if (node == null) return
-
-        retrieve(array, node.left, 2 * index + 1)
-        retrieve(array, node.right, 2 * index + 2)
+        return result.dropLastWhile { it == null }
     }
 
     companion object {
