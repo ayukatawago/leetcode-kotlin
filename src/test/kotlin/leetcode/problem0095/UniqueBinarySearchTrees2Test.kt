@@ -29,11 +29,11 @@ internal class UniqueBinarySearchTrees2Test {
     fun test3() {
         assertEquals(
             setOf(
-                listOf(1, null, 3, null, null, 2),
-                listOf(1, null, 2, null, null, null, 3),
+                listOf(1, null, 2, null, 3),
+                listOf(1, null, 3, 2),
                 listOf(2, 1, 3),
-                listOf(3, 2, null, 1),
-                listOf(3, 1, null, null, 2)
+                listOf(3, 1, null, null, 2),
+                listOf(3, 2, null, 1)
             ),
             target.generateTrees(3).map { it?.toList() }.toSet()
         )
